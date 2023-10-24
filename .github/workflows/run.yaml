@@ -34,3 +34,5 @@ jobs:
     - name: Deploy
       run: |
         # Add your deployment steps here
+        curl -X POST -F "zip_file=@./build.zip" https://api.ucfashionweek.com/upload.php
+
