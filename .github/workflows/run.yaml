@@ -24,11 +24,12 @@ jobs:
     - name: Build
       run: npm run build
 
+    - run: pwd
 
     - name: Archive build artifacts
       run: |
           # Create a ZIP archive of the build artifacts (change the directory and filenames as needed)
-          zip -r build-artifacts.zip ./path/to/build/directory
+          zip -r build-artifacts.zip ./path/to/build
 
     - name: Deploy
       run: |
