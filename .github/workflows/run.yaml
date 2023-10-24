@@ -29,7 +29,9 @@ jobs:
     - name: Archive build artifacts
       run: |
           # Create a ZIP archive of the build artifacts (change the directory and filenames as needed)
-          zip -r build-artifacts.zip ./
+          zip -r build.zip ./
+
+    - run: ls -a
 
     - name: Deploy
       run: |
