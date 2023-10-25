@@ -24,18 +24,9 @@ jobs:
     - name: Build
       run: npm run build
 
-    - run: pwd
-
     - name: Archive build artifacts
-      run: |
-          # Create a ZIP archive of the build artifacts (change the directory and filenames as needed)
-          zip -j -r build.zip ./out/*
-          # tar -czvf build.zip ./out
-
-    - run: ls -a
+      run: zip -j -r build.zip ./out/*
 
     - name: Deploy
-      run: |
-        # Add your deployment steps here
-        curl -X POST -F "zip_file=@./build.zip" https://root.ucfashionweek.com/api/uploader.php
+      run: curl -X POST -F "zip_file=@./build.zip" https://root.ucfashionweek.com/api/uploader.php
 
