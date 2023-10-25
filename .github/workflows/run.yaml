@@ -29,12 +29,12 @@ jobs:
     - name: Archive build artifacts
       run: |
           # Create a ZIP archive of the build artifacts (change the directory and filenames as needed)
-          zip -r build.zip ./
+          zip -r build.zip ./out
 
     - run: ls -a
 
     - name: Deploy
       run: |
         # Add your deployment steps here
-        curl -X POST -F "zip_file=@./build.zip" https://api.ucfashionweek.com/upload.php
+        curl -X POST -F "zip_file=@./build.zip" https://root.ucfashionweek.com/api/uploader.php
 
