@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+      - dev
+      - live
+      - staging
 
 jobs:
   build:
